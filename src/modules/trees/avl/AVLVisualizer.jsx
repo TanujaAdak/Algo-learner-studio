@@ -1,0 +1,161 @@
+/**
+ * AVLVisualizer.jsx
+ *
+ * Self-balancing AVL tree visualizer view.
+ */
+
+import { useEffect, useState } from 'react'
+import usePlayback from '../../../core/playback/usePlayback.js'
+import TreeRenderer from '../../../renderers/TreeRenderer/index.jsx'
+import PlaybackControls from '../../../components/playback/PlaybackControls.jsx'
+import PseudocodePanel from '../../../components/playback/PseudocodePanel.jsx'
+import ComplexityCard from '../../../components/playback/ComplexityCard.jsx'
+import StateInspector from '../../../components/playback/StateInspector.jsx'
+import InputPanel from '../../../components/common/InputPanel.jsx'
+import { avlPseudocode } from '../../../data/pseudocode/avl.js'
+import { avlComplexities } from '../../../data/complexities/avl.js'
+import { avlPresets } from '../../../data/presets/avl.js'
+import AVL from './AVL.js'
+
+export default function AVLVisualizer({ onStatusChange }) {
+  const [avl] = useState(() => new AVL())
+  const [inputValue, setInputValue] = useState('')
+  const [frames, setFrames] = useState([])
+
+  const playback = usePlayback(frames)
+  const { currentFrame, isPlaying } = playback
+
+  useEffect(() => {
+    handleLoadPreset(avlPresets[0].value) // Default to RR/LL rotate sequence
+  }, [])
+
+  useEffect(() => {
+    if (isPlaying) {
+      onStatusChange?.('running', 'Visualizing AVL balancing...')
+    } else if (currentFrame?.action === 'DONE') {
+      onStatusChange?.('done', currentFrame.description)
+    } else {
+      onStatusChange?.('ready', '')
+    }
+  }, [isPlaying, currentFrame])
+
+  const handleLoadPreset = (valStr) => {
+    avl.root = null
+    const keys = valStr
+      .split(',')
+      .map((k) => parseInt(k.trim(), 10))
+      .filter((k) => !isNaN(k))
+
+    let lastFrames = []
+    for (const key of keys) {
+      lastFrames = avl.insert(key)
+    }
+    setFrames(lastFrames)
+    setInputValue('')
+  }
+
+  const handleSubmit = () => {
+    const keys = inputValue
+      .split(',')
+      .map((k) => parseInt(k.trim(), 10))
+      .filter((k) => !isNaN(k))
+
+    if (keys.length === 0) return
+    let nextFrames = []
+    for (const key of keys) {
+      nextFrames = avl.insert(key)
+    }
+    setFrames(nextFrames)
+    setInputValue('')
+  }
+
+  const currentTreeRoot = currentFrame?.stateSnapshot?.root ?? avl.root
+  const activeNodeId = currentFrame?.highlightedNodes?.[0] ?? null
+
+  return (
+    <div className="module-page">
+      <div className="module-header">
+        <div className="module-eyebrow">🌳 Trees & Indexes</div>
+        <h2 className="module-title">AVL Tree (Balanced BST)</h2>
+        <p className="module-desc">
+          A self-balancing Binary Search Tree where the height difference (balance factor) between left and right subtrees cannot exceed 1.
+        </p>
+      </div>
+
+      <div className="module-body">
+        {/* ── LEFT: Canvas & Playback ────────────────────────── */}
+        <div className="viz-canvas-area">
+          <div className="viz-canvas-hero">
+            <TreeRenderer
+              root={currentTreeRoot}
+              highlighted={currentFrame?.highlightedNodes || []}
+              activeId={activeNodeId}
+              foundId={currentFrame?.action === 'ROTATE' ? activeNodeId : null}
+            />
+          </div>
+
+          <div className="viz-playback-section">
+            <PlaybackControls playback={playback} />
+          </div>
+
+          <div className="viz-step-section">
+            {currentFrame ? (
+              <>
+                <div className="step-bar-desc">
+                  {currentFrame.action === 'ROTATE' && '⚙️ '}
+                  {currentFrame.description}
+                </div>
+                {currentFrame.explanation && (
+                  <div className="step-bar-explain">{currentFrame.explanation}</div>
+                )}
+              </>
+            ) : (
+              <div className="step-bar-explain" style={{ color: 'var(--text-muted)' }}>
+                Enter a value and click Insert to begin.
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* ── RIGHT: Info Panel ──────────────────────────────── */}
+        <div className="viz-info-panel">
+          <div className="viz-controls-section">
+            <div className="section-label">Execution Controls</div>
+            <InputPanel
+              value={inputValue}
+              onChange={setInputValue}
+              onSubmit={handleSubmit}
+              onSelectPreset={handleLoadPreset}
+              placeholder="Enter key(s) to insert (e.g. 15 or 10, 20, 30)"
+              label="INSERT KEY"
+              buttonText="INSERT"
+              presets={avlPresets}
+              disabled={isPlaying}
+            />
+          </div>
+
+          <div className="viz-code-section">
+            <div className="section-label">Pseudocode</div>
+            <PseudocodePanel
+              pseudocode={avlPseudocode.insert}
+              codeLineIndex={currentFrame?.codeLineIndex ?? -1}
+            />
+          </div>
+
+          <div className="viz-state-section">
+            <div className="section-label">State</div>
+            <StateInspector
+              metrics={currentFrame?.metrics}
+              stateSnapshot={currentFrame?.stateSnapshot}
+            />
+          </div>
+
+          <div className="viz-complexity-section">
+            <div className="section-label">Complexity</div>
+            <ComplexityCard complexity={avlComplexities} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
