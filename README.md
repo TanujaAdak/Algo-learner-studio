@@ -1,150 +1,99 @@
+<div align="center">
+
 # 🎓 Algo Learner Studio
 
-> **Your interactive studio for mastering Data Structures & Algorithms.**  
-> Step-by-step animations, synchronized pseudocode execution, real-time audio feedback, and deep complexity analysis.
+**An interactive studio for mastering Data Structures & Algorithms.**  
+Step-by-step visual animations, synchronized pseudocode execution, real-time audio synthesis, and deep complexity analysis.
 
-[![Live Demo on Vercel](https://img.shields.io/badge/Live%20Demo-Visit%20Studio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://algo-learner-studio.vercel.app)
-![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
-![Vite](https://img.shields.io/badge/Vite-5-purple?style=flat-square&logo=vite)
-![CSS3](https://img.shields.io/badge/CSS3-Design%20System-blueviolet?style=flat-square)
-![Tests](https://img.shields.io/badge/Tests-14%20Passing-success?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+<br />
 
-🌐 **Live Demo:** [https://algo-learner-studio.vercel.app](https://algo-learner-studio.vercel.app)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-algo--learner--studio.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://algo-learner-studio.vercel.app)
 
----
+<br />
 
-## 🌟 Highlights & Features
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Tests](https://img.shields.io/badge/Tests-14%20Passing-22c55e?style=flat-square)](test/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-* 🎬 **Interactive Playback Engine:** Play, pause, step forward/backward, and scrub through algorithm execution. Granular speed multipliers from **0.25× to 2.0×** with calibrated pacing (**900ms** base delay).
-* 🎨 **Multi-Theme Design System:** Switch instantly between 4 developer-grade dark themes in the TopBar:
-  * **GitHub Dark** *(Emerald Mint accent)*
-  * **Tokyo Night** *(Electric Cyan & Indigo)*
-  * **Catppuccin Mocha** *(Warm Espresso & Mauve)*
-  * **Nord Frost** *(Arctic Slates & Glacier Blue)*  
-  *(Preferences automatically saved to `localStorage`)*
-* 🔊 **Web Audio Synthesizer:** Real-time programmatic sound synthesis with zero external audio assets. Produces pitch-scaled sine/triangle chimes for comparisons, harmonic swaps, balancing rotations, and completion fanfares. Toggle anytime with the **🔊/🔇 button** or press **`M`**.
-* 🧠 **Synchronized Pseudocode Execution:** The exact line of pseudocode currently executing is highlighted in real-time alongside the visualization without layout shifts.
-* 📊 **Big-O Complexity Cards:** Instant breakdown of Best, Average, Worst Time Complexity, and Space Complexity for every algorithm.
-* 🔬 **State Inspector:** Live inspection of variable pointers, recursion states, partition ranges, and active memory frames.
-* ⚡ **Fluid Micro-Animations:** Dynamic spring transforms, illuminated pulsing halos, smooth SVG edge morphing, and bouncing pieces built purely in CSS.
-* ⌨️ **Full Keyboard Navigation:** Control the entire studio from your keyboard without touching your mouse.
+</div>
 
 ---
 
-## 📚 Algorithms Covered
+## 🌟 Key Features
 
-### 🌳 Trees & Indexes
-| Algorithm | Key Visual Features |
-|---|---|
-| **Binary Search Tree (BST)** | Insertion, Search, Deletion with subtree preservation, Inorder traversal |
-| **AVL Tree** | Self-balancing tree with animated **LL, RR, LR, and RL** rotations and live balance factors |
-| **Min / Max Heap** | Heapify-up & Heapify-down with dual tree + array mapping |
-| **Trie (Prefix Tree)** | Prefix insertion, word search, and deletion with active path lighting |
-| **B-Tree (Database Index)** | Database index visualization with node splitting and block traversal |
+* **🎬 Interactive Playback Engine:** Play, pause, step forward/backward, and scrub with granular speed control (**0.25× to 2.0×**).
+* **🎨 4 Developer Themes:** Instant toggle between **GitHub Dark**, **Tokyo Night**, **Catppuccin Mocha**, and **Nord Frost**.
+* **🔊 Web Audio Synthesizer:** Real-time audio feedback with pitch-scaled chimes for comparisons, swaps, and tree rotations.
+* **🧠 Synced Pseudocode:** Dynamic line-by-line highlight linked directly to the running algorithm step.
+* **📊 Live Big-O Complexity:** Instant breakdown of Time (Best/Avg/Worst) and Space complexity.
+* **🔬 State Inspector:** Real-time inspection of active variables, pointers, and call stack frames.
+* **⌨️ Keyboard First:** Complete keyboard navigation for seamless learning without touching a mouse.
 
-### ⚡ Sorting Algorithms
-| Algorithm | Key Visual Features |
-|---|---|
-| **Bubble Sort** | Adjacent comparisons, springy lift transforms, and trailing sorted markers |
-| **Selection Sort** | Unsorted range scanning, minimum element tracker, and placement |
-| **Insertion Sort** | Subarray shifting, insertion position search, and clean insertion |
-| **Merge Sort** | Divide-and-conquer recursion tree, auxiliary array buffer, and merging |
-| **Quick Sort** | Pivot selection, partition pointers ($i, j$), and recursive divide |
-| **Heap Sort** | Max-heap building, root extraction, and array shrinking |
-| **⚔️ Compare Sorts (Race)** | Run algorithms side-by-side on the exact same array with live swap/comparison counters |
+---
 
-### 🕸️ Graph Algorithms
-| Algorithm | Key Visual Features |
-|---|---|
-| **Breadth-First Search (BFS)** | Layer-by-layer frontier expansion, queue state, visited node rings |
-| **Depth-First Search (DFS)** | Deep branch exploration, recursion call-stack tracking, backtrack paths |
-| **Dijkstra's Algorithm** | Shortest path relaxation, priority queue tracking, live distance table |
+## 📚 Supported Algorithms & Data Structures
 
-### 🧩 Dynamic Programming
-| Algorithm | Key Visual Features |
-|---|---|
-| **Fibonacci Sequence** | Memoization vs. bottom-up tabulation with cell dependency pointers |
-| **Longest Common Subsequence (LCS)** | 2D dynamic programming grid matrix with match/mismatch backtracking |
-
-### 🔗 Lists, Stacks & Queues
-| Structure | Key Visual Features |
-|---|---|
-| **Singly Linked List** | Head pointer, node insertion, deletion, and pointer link updates |
-| **Stack** | LIFO (Last-In, First-Out) push and pop animations |
-| **Queue** | FIFO (First-In, First-Out) enqueue and dequeue animations |
-
-### #️⃣ Hashing & Backtracking
-| Structure / Problem | Key Visual Features |
-|---|---|
-| **Hash Table** | Separate Chaining (overflow buckets) and Open Addressing (linear probing) |
-| **N-Queens Problem** | Backtracking chessboard with animated queen drops, threat detection, and conflict wobbles |
+| Category | Algorithms / Structures | Key Highlights |
+| :--- | :--- | :--- |
+| **🌳 Trees & Indexes** | BST, AVL Tree, Min/Max Heap, Trie, B-Tree | Animated rotations (LL, RR, LR, RL), dual tree+array heap views, and database indexing |
+| **⚡ Sorting** | Bubble, Selection, Insertion, Merge, Quick, Heap | Compare Sorts (side-by-side race mode), real-time swap/comparison telemetry |
+| **🕸️ Graphs** | BFS, DFS, Dijkstra's Algorithm | Shortest path relaxation, frontier expansion, and live distance table |
+| **🧩 Dynamic Programming** | Fibonacci, Longest Common Subsequence (LCS) | Memoization vs. tabulation, 2D matrix backtracks |
+| **🔗 Lists & Stacks** | Singly Linked List, Stack, Queue | Pointer manipulation, LIFO and FIFO visualizations |
+| **#️⃣ Hashing & Backtracking** | Hash Table, N-Queens Problem | Separate chaining, linear probing, and conflict resolution |
 
 ---
 
 ## ⌨️ Keyboard Shortcuts
 
-| Key | Action |
-|---|---|
-| <kbd>Space</kbd> | Toggle Play / Pause |
-| <kbd>→</kbd> | Step Forward (1 frame) |
-| <kbd>←</kbd> | Step Backward (1 frame) |
-| <kbd>Shift</kbd> + <kbd>→</kbd> | Jump to End |
-| <kbd>Shift</kbd> + <kbd>←</kbd> | Jump to Beginning |
-| <kbd>M</kbd> | Toggle Audio Sound (Mute / Unmute) |
-| <kbd>?</kbd> | Open Shortcuts & Help Overlay |
-| <kbd>Esc</kbd> | Close Help Modal / Return to Dashboard |
+| Shortcut | Description |
+| :--- | :--- |
+| <kbd>Space</kbd> | Play / Pause animation |
+| <kbd>→</kbd> / <kbd>←</kbd> | Step forward / backward by 1 frame |
+| <kbd>Shift</kbd> + <kbd>→</kbd> / <kbd>←</kbd> | Jump to end / beginning |
+| <kbd>M</kbd> | Toggle sound audio on / off |
+| <kbd>?</kbd> | Open Keyboard Shortcuts & Help overlay |
+| <kbd>Esc</kbd> | Close overlay / Return to Dashboard |
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
-### Prerequisites
-* [Node.js](https://nodejs.org/) (version 18 or higher recommended)
-* [npm](https://www.npmjs.com/)
+### 1. Clone the repository
+```bash
+git clone https://github.com/TanujaAdak/Algo-learner-studio.git
+cd Algo-learner-studio
+```
 
-### Installation & Run
+### 2. Install dependencies
+```bash
+npm install
+```
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/TanujaAdak/algo-learner-studio.git
-   cd algo-learner-studio
-   ```
+### 3. Run development server
+```bash
+npm run dev
+```
+Open **http://localhost:5173/** in your browser.
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-   Open your browser at **http://localhost:5173/**.
-
-4. **Run automated test suite:**
-   ```bash
-   npm test
-   ```
-   Runs native Node.js tests verifying algorithms, sound synthesizer, and multi-theme design tokens.
-
-5. **Build for production:**
-   ```bash
-   npm run build
-   ```
+### 4. Run tests
+```bash
+npm test
+```
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## 🛠️ Built With
 
-* **Frontend:** React 18, Vite 5
-* **Styling:** Pure Vanilla CSS Design System with customized CSS variables, HSL color tokens, and spring physics (Zero Tailwind / Zero runtime CSS overhead)
-* **Audio:** Web Audio API (`SoundEngine.js`)
+* **Frontend:** [React 18](https://react.dev/) + [Vite 5](https://vitejs.dev/)
+* **Styling:** Vanilla CSS Design System with custom design tokens & smooth micro-animations
+* **Audio Engine:** Web Audio API (real-time zero-dependency sound synthesis)
 * **Testing:** Native Node.js test runner (`node:test`, `node:assert/strict`)
-* **Bundle:** Super-fast build in ~500ms producing optimized gzipped assets
+* **Deployment:** [Vercel](https://vercel.com/)
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open-source and available under the [MIT License](LICENSE).
