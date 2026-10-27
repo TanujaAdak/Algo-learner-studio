@@ -3,12 +3,14 @@
 > **Your interactive studio for mastering Data Structures & Algorithms.**  
 > Step-by-step animations, synchronized pseudocode execution, real-time audio feedback, and deep complexity analysis.
 
-![Algo Learner Studio Banner](https://img.shields.io/badge/Algo%20Learner%20Studio-v1.0.0-58D6A3?style=for-the-badge&logo=react)
+[![Live Demo on Vercel](https://img.shields.io/badge/Live%20Demo-Visit%20Studio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://algo-learner-studio.vercel.app)
 ![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-5-purple?style=flat-square&logo=vite)
 ![CSS3](https://img.shields.io/badge/CSS3-Design%20System-blueviolet?style=flat-square)
 ![Tests](https://img.shields.io/badge/Tests-14%20Passing-success?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+
+🌐 **Live Demo:** [https://algo-learner-studio.vercel.app](https://algo-learner-studio.vercel.app)
 
 ---
 
